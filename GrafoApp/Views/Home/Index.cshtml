@@ -1,0 +1,181 @@
+﻿@model HomeModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<hr class="divider" />
+<div class="row" id="divGrafos">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h4>Caminho mais curto entre dois vértices</h4>
+        <form>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 form-group">
+                    <label for="grafoPontoA">Vértice inicial:</label>
+                    <input id="grafoPontoA" name="grafoPontoA" type="text" maxlength="1" class="form-control" />
+                </div>
+                <div class="col-lg-3 col-md-3 form-group">
+                    <label for="grafoPontoB">Vértice final:</label>
+                    <input id="grafoPontoB" name="grafoPontoB" type="text" maxlength="1" class="form-control" />
+                </div>
+                <div class="col-lg-6 col-md-3 form-group">
+                    <h4 id="lblMenorCaminho"></h4>
+                </div>
+            </div>
+            <button type="button" id="btnPontosGrafo" class="btn btn-success">Enviar</button>
+        </form>
+        <hr class="divider" />
+        <div id="tabs">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#divGrafo1" aria-controls="divGrafo1" role="tab" data-toggle="tab">Grafo 1</a>
+                </li>
+                <li role="presentation">
+                    <a href="#divGrafo2" aria-controls="divGrafo2" role="tab" data-toggle="tab">Grafo 2</a>
+                </li>
+                <li role="presentation">
+                    <a href="#divGrafo3" aria-controls="divGrafo3" role="tab" data-toggle="tab">Grafo 3</a>
+                </li>
+                <li role="presentation">
+                    <a href="#divGrafo4" aria-controls="divGrafo4" role="tab" data-toggle="tab">Grafo 4</a>
+                </li>
+                <li role="presentation">
+                    <a href="#divGrafo5" aria-controls="divGrafo5" role="tab" data-toggle="tab">Grafo 5</a>
+                </li>
+                <li role="presentation">
+                    <a href="#divGrafo6" aria-controls="divGrafo6" role="tab" data-toggle="tab">Grafo 6</a>
+                </li>
+                <li role="presentation">
+                    <a href="#divGrafo7" aria-controls="divGrafo7" role="tab" data-toggle="tab">Grafo 7</a>
+                </li>
+                <li role="presentation">
+                    <a href="#divGrafo8" aria-controls="divGrafo8" role="tab" data-toggle="tab">Grafo 8</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="divGrafo1">
+                    <canvas id="grafo1"></canvas>
+                    <h4>@Model.Grafo1CaminhoEuleriano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo1CaminhoHamiltoniano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo1MaiorTriangulo</h4>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="divGrafo2">
+                    <canvas id="grafo2"></canvas>
+                    <h4>@Model.Grafo2CaminhoEuleriano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo2CaminhoHamiltoniano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo2MaiorTriangulo</h4>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="divGrafo3">
+                    <canvas id="grafo3"></canvas>
+                    <h4>@Model.Grafo3CaminhoEuleriano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo3CaminhoHamiltoniano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo3MaiorTriangulo</h4>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="divGrafo4">
+                    <canvas id="grafo4"></canvas>
+                    <h4>@Model.Grafo4CaminhoEuleriano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo4CaminhoHamiltoniano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo4MaiorTriangulo</h4>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="divGrafo5">
+                    <canvas id="grafo5"></canvas>
+                    <h4>@Model.Grafo5CaminhoEuleriano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo5CaminhoHamiltoniano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo5MaiorTriangulo</h4>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="divGrafo6">
+                    <canvas id="grafo6"></canvas>
+                    <h4>@Model.Grafo6CaminhoEuleriano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo6CaminhoHamiltoniano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo6MaiorTriangulo</h4>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="divGrafo7">
+                    <canvas id="grafo7"></canvas>
+                    <h4>@Model.Grafo7CaminhoEuleriano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo7CaminhoHamiltoniano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo7MaiorTriangulo</h4>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="divGrafo8">
+                    <canvas id="grafo8"></canvas>
+                    <h4>@Model.Grafo8CaminhoEuleriano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo8CaminhoHamiltoniano</h4>
+                    <hr class="divider" />
+                    <h4>@Model.Grafo8MaiorTriangulo</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+@section Scripts {
+    <script>
+        var strDadosGrafo = '';
+
+        strDadosGrafo = '@Html.Raw(Model.Grafo1Info.GrafoData)';
+        var dadosGrafo1 = JSON.parse(strDadosGrafo);
+        var grafo1xAxe = @Model.Grafo1Info.GrafoXAxisValue;
+        var grafo1yAxe = @Model.Grafo1Info.GrafoYAxisValue;
+
+        strDadosGrafo = '@Html.Raw(Model.Grafo2Info.GrafoData)';
+        var dadosGrafo2 = JSON.parse(strDadosGrafo);
+        var grafo2xAxe = @Model.Grafo2Info.GrafoXAxisValue;
+        var grafo2yAxe = @Model.Grafo2Info.GrafoYAxisValue;
+
+        strDadosGrafo = '@Html.Raw(Model.Grafo3Info.GrafoData)';
+        var dadosGrafo3 = JSON.parse(strDadosGrafo);
+        var grafo3xAxe = @Model.Grafo3Info.GrafoXAxisValue;
+        var grafo3yAxe = @Model.Grafo3Info.GrafoYAxisValue;
+
+        strDadosGrafo = '@Html.Raw(Model.Grafo4Info.GrafoData)';
+        var dadosGrafo4 = JSON.parse(strDadosGrafo);
+        var grafo4xAxe = @Model.Grafo4Info.GrafoXAxisValue;
+        var grafo4yAxe = @Model.Grafo4Info.GrafoYAxisValue;
+
+        strDadosGrafo = '@Html.Raw(Model.Grafo5Info.GrafoData)';
+        var dadosGrafo5 = JSON.parse(strDadosGrafo);
+        var grafo5xAxe = @Model.Grafo5Info.GrafoXAxisValue;
+        var grafo5yAxe = @Model.Grafo5Info.GrafoYAxisValue;
+
+        strDadosGrafo = '@Html.Raw(Model.Grafo6Info.GrafoData)';
+        var dadosGrafo6 = JSON.parse(strDadosGrafo);
+        var grafo6xAxe = @Model.Grafo6Info.GrafoXAxisValue;
+        var grafo6yAxe = @Model.Grafo6Info.GrafoYAxisValue;
+
+        strDadosGrafo = '@Html.Raw(Model.Grafo7Info.GrafoData)';
+        var dadosGrafo7 = JSON.parse(strDadosGrafo);
+        var grafo7xAxe = @Model.Grafo7Info.GrafoXAxisValue;
+        var grafo7yAxe = @Model.Grafo7Info.GrafoYAxisValue;
+
+        strDadosGrafo = '@Html.Raw(Model.Grafo8Info.GrafoData)';
+        var dadosGrafo8 = JSON.parse(strDadosGrafo);
+        var grafo8xAxe = @Model.Grafo8Info.GrafoXAxisValue;
+        var grafo8yAxe = @Model.Grafo8Info.GrafoYAxisValue;
+    </script>
+    <script src="~/js/grafo1Script.js"></script>
+    <script src="~/js/grafo2Script.js"></script>
+    <script src="~/js/grafo3Script.js"></script>
+    <script src="~/js/grafo4Script.js"></script>
+    <script src="~/js/grafo5Script.js"></script>
+    <script src="~/js/grafo6Script.js"></script>
+    <script src="~/js/grafo7Script.js"></script>
+    <script src="~/js/grafo8Script.js"></script>
+    <script src="~/js/shortPathScript.js"></script>
+}
